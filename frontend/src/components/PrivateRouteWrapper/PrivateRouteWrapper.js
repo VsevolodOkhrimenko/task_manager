@@ -1,26 +1,25 @@
-import { useEffect } from 'react'
-import { getUserInfo } from 'utils/auth/actions'
-import { useDispatch, useSelector } from 'react-redux'
+import Container from '@material-ui/core/Container'
+import React from 'react'
+import Navbar from 'components/Navbar'
+import useStyles from './styles'
 
+const isMobile = false
 
 const PrivateRouteWrapper = (props) => {
   const { children } = props
-  const dispatch = useDispatch()
-  const authToken = useSelector(state => state.auth.authToken)
+  const classes = useStyles({isMobile})
 
-  useEffect(() => {
-    if (authToken) {
-      dispatch(getUserInfo())
-    }
-  }, [authToken]) // eslint-disable-line react-hooks/exhaustive-deps
-
-  if (children) {
-    return (
-      children
-    )
-  } else {
-    return null
-  }
+  return (
+    <>
+      <Navbar
+        classes={{...{appBar: classes.appBar}}}
+        maxWidth='lg'
+      />
+        <Container className={classes.content} maxWidth='lg'>
+          { children ? children : null}
+        </Container>
+    </>
+  )
 }
 
 export default PrivateRouteWrapper

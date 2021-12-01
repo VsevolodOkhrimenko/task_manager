@@ -9,7 +9,7 @@ import {
 const initialState = {
   authToken: localStorage.getItem('authToken'),
   name: null,
-  email: null,
+  username: null,
   userInfoIsLoading: false,
   getUserInfoError: null
 }
@@ -32,7 +32,7 @@ const authReducer = (state = initialState, action) => {
         ...state,
         getUserInfoError: null,
         name: action.payload.name,
-        email: action.payload.email
+        username: action.payload.username
       }
     case GET_USER_INFO_ERROR:
       return {

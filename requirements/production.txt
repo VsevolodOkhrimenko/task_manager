@@ -13,8 +13,7 @@ django-storages[boto3]==1.9.1  # https://github.com/jschneier/django-storages
 django-redis==4.11.0  # https://github.com/niwinz/django-redis
 
 
-uvicorn==0.12.2
-uvloop==0.14.0
-httptools==0.1.1
-websockets==8.1
-Twisted==20.3.0
+uvicorn==0.12.2  # https://github.com/encode/uvicorn
+uvloop==0.14.0  # https://github.com/MagicStack/uvloop
+httptools==0.1.1  # https://github.com/MagicStack/httptools
+Twisted==20.3.0  # https://github.com/twisted/twisted

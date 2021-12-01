@@ -11,6 +11,7 @@ import store from 'store'
 import Config from 'config'
 
 const { apiUrl } = Config.network
+const publicUrls = ['/login', '/sign-up',]
 
 
 export const resetAuthToken = () => {
@@ -20,7 +21,7 @@ export const resetAuthToken = () => {
       type: RESET_TOKEN
     })
     delete axios.defaults.headers.common.Authorization
-    if (history.location.pathname !== '/login') {
+    if (!publicUrls.includes(history.location.pathname)) {
       history.push('/login')
     }
   }
@@ -66,7 +67,7 @@ export const getUserInfo = () => {
         type: SET_USER_INFO,
         payload: {
           name: data.name,
-          email: data.email
+          username: data.username
         }
       })
       dispatch({
