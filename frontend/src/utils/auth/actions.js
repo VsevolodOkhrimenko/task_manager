@@ -16,7 +16,7 @@ const publicUrls = ['/login', '/sign-up',]
 
 export const resetAuthToken = () => {
   return (dispatch) => {
-    localStorage.setItem('authToken', null)
+    localStorage.removeItem('authToken')
     dispatch({
       type: RESET_TOKEN
     })
