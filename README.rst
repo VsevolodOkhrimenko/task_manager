@@ -5,7 +5,6 @@ Built with:
 
 - Django
 - DRF
-- Redis
 - PostgreSQL
 - React.js
 - Router
@@ -15,7 +14,7 @@ Built with:
 Pre-requirements
 ----------------
 
-This project built with Docker. To build and run it on your machine you will need to install `Docker Engine <https://docs.docker.com/engine/install/>`_ and `Docker Compose <https://docs.docker.com/compose/install/>`_.
+This project built with Docker. To build and run it on your machine you will have to install `Docker Engine <https://docs.docker.com/engine/install/>`_ and `Docker Compose <https://docs.docker.com/compose/install/>`_.
 
 
 Settings
@@ -42,6 +41,8 @@ Install dependences and build your frontend part (If applicable). See frontend/s
     $ npm install
     $ npm run build
 
+If you have any issues with NPM packages, try to install them with ``Node 10.x.x``
+
 To build backend server go to project root and run::
 
     $ docker-compose -f local.yml build
@@ -49,6 +50,10 @@ To build backend server go to project root and run::
 To run built backend server go to project root and run::
 
     $ docker-compose -f local.yml up
+
+Or just use::
+
+    $ docker-compose -f local.yml up --build
 
 
 Setting Up Your Users
